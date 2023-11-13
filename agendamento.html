@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!--Tag especifica que o conteúdo do site é em português do Brasil-->
+	<head>
+		<title>PFB no Parque</title> <!--Tag especifica caracteres que aparecem na aba do navegador-->
+		<meta charset="utf-8" /> <!--Tag permite o uso de caracteres especiais como acentos, cedilha, etc-->
+		<meta name="author" content="André Carvalho"/><!--Não deve ser quem desenvolveu, é um complemento a descrição e as palavras chaves, usar o nome pra quem o site foi desenvolvido-->
+		<meta name="keywords" content="Progressive,FitBall,pfb,parque da cidade,atividade física,pilates,parque,atividade física,progressivefitball"/><!--Podem ser usados até 150 caracteres-->
+		<meta name="description" content="Prática de atividade ao ar livre utilizando a fitball, pode ser utilizado na reabilitação"/><!--Podem ser usados até 90 caracteres-->
+		<link rel="stylesheet" type="text/css" href="estilo.css"/><!--link que associa o arquivo CSS a esse-->
+	</head>
+	<body>
+		<header>
+		 	<!--Atributo bgcolor modifica a cor do fundo de todo o body--> <!--atributos link, alink e vlink são as cores da tag <a> antes durante e após o clique do usuário-->
+
+			<img src="img/banner.png" alt="banner do site contendo foto da imagem do parque da cidade com bastante verde e céu azul em um dia ensolarado contendo a logo do PFB no parque ao fundo"/>
+			<!--o atributo scr é obrigatório nessa tag--><!--100% no atributo width ou height fixa a imagem na totalidade da tela, o ideal é escolher um dos atributos para evitar distorção--> <!--O atributo alt serve como alternativa ao carregamento da imagem, é utilizado no caso da imagem não carregar ou para fins de acessibilidade (baixa visão)-->
+		</header>	
+		<nav>
+			<!--O comando &nbsp dá um espaço entre os itens do cabeçalho, no css existe forma melhor de modificar o espaçamento-->
+			<a class="a-menu" href="index.html">HOME</a> 
+			<a class="a-menu" href="index.html#pag-beneficios">BENEFÍCIOS</a> 
+			<a class="a-menu" href="index.html#pag-modalidades">MODALIDAES</a>
+			<a class="a-menu" href="index.html#pag-treinos">TREINOS</a> 
+			<a class="a-menu" href="#">AGENDAMENTOS</a>
+		</nav>
+
+		<section id="pag-agendamentos">
+			<!--tag <a> indica algo clicável, um link (ainda não foi navegado), alink(no momento do click), vlink(após o link ser utilizado)--><!--o atributo href indica para onde o link vai mandar o usuário para lugar algum(#), para outro site(http:), para outo nugar na mesma pagina (uma tag), ou para outra pagina do proprio site (outro arquivo, diferente do index) modificadas na tag <body>-->
+		
+			<h1>Agendamentos</h1>
+			
+			<p>Agende uma aula experimental grátis!!!</p>
+
+			<!--Tag <form> representa o formulário, possui vários atributos NAME: indica o nome do formulário, METHOD: indica o metodo de envio se deixar o valor em branco será o padrão (GET), nesse método os dados aparecem na janela do navegador outra possibilidade é usar o valor POST (dados não aprecem no navegador). O atributo ACTION: indica para qual arquivo os dados estão indo, no momento opatou-se por deixar em branco (apenas front-end)-->
+			<form name="frm-agendar" method="GET" action="">
+
+				<!--A tag <label> serve para colocar o rótulo que se refere ao input. Para vincular o label ao input usamos o atributo FOR="", para haver a ligação entre label e input o for deve ter o mesmo valor do campo id do input vinculado-->
+				<label for="nome">Nome:</label>
+
+				<!--A tag <input> é uma tag orfã e representa o campo onde o dado será digitado tem dois atributos obrigatórios TYPE:indica o tipo de dado a ser captado, nesse caso TEXT, o atributo NAME="" é utilizado para identificar o dado captado no arquivo de envio. O atributo ID="" serve para vincular o label e o input. O atributo SIZE="" se refere a quantidade de caracteres a ser recebida pelo campo input. O atributo REQIURED PLACEHOLDER: exemplo dentro do campo input mostrando como deve se dar a entrada de dados. O atributo REQUIRED ou RIQUIRED="TRUE" indica que o campo no formulário é obrigatório. O atributo AUTOFOCUS ou AUTOFOCUS="TRUE" faz com que quando a página seja carregada o cursor já apareça nesse campo-->
+				<input id="nome" type="text" name="nome completo" required placeholder="Preencha seu nome completo" size="40" required autofocus/>
+
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email" required placeholder="nomeusuario@email.com"/> <!--No tipo e-mail ocorre a validação do endereço da seguinte forma, o dado deve ter o formato similar ao indicado no campo required placeholder, caso contrário não será aceito.-->
+
+				<label for="senha">Senha:</label>
+				<input id="senha" type="password" name="senha" riquired placeholder="somente números"/>
+				<!--O tipo PASSWORD faz com que o que for digitado no campo não fique visível para outros usuários-->
+
+				<label for="celular">Celular:</label>
+				<input id="celular" type="tel" name="celular" riquired placeholder="(99)99999-9999" pattern="^\(?\d{2}\)\d{5}[-\s]\d{4}.*?$"/>
+				<!--O tipo TEL não faz validação do que foi digitado, o atributo PATTERN="" é que faz esse tipo de validação por meio da formula indicada acima-->
+
+				<div id="data-hora-numero">
+					<div class="agendamento-data">
+						<!--Campo tipo DATA só aceita valores de datas possíveis -->
+						<label for="data">Data:</label>
+						<input id="data" type="date" name="data"/>
+					</div>
+					<div class="agendamento-hora">
+						<!--Campo tipo TIME só aceita valores de horários possíveis -->
+						<label for="hora">Hora:</label>
+						<input id="data" type="time" name="hora"/>
+					</div>
+					<div class="agendamento-numero">
+						<!--Campo NUMBER permite os atributos MAX="" valor maximo, MIN="" valor mínimo e STEP="" incremento permitido-->
+						<label for="aulas">Aulas:</label>
+						<input id="aulas" type="number" name="aulas" min="1" max="10" step="1" size="5"/>
+					</div>
+				</div>
+
+				<!--Novo tipo de entrada a SELECT-->
+				<label for="nivel">Nível:</label>
+
+				<select id="nivel" name="nivel">
+					<!--O atributo VALUE é opcional, mas ajuda a padronizar os dados enviados, é possível usar números para representar as opções por exemplo. Sem o atributo VALUE o dado enviado será o que estiver entre as tags <option>-->
+					<option value="">Selecione</option> <!--valor inicial do campo select-->
+					<option value="">Iniciante</option>
+					<option value="">Básico</option>
+					<option value="">Intermediário</option>
+					<option value="">Avançado</option>
+				</select><br/><br/>
+
+				<!--a tag <fieldset> os demais campos com um retângulo-->
+				<fieldset>
+					<legend>Gênero:</legend><!--Indica o nome do que está dentro do fieldset-->
+
+					<!--No tipo RADIO apenas uma das opções pode ser selecionada se o atributo NAME for o mesmo. No tipo RADIO um atributo VALOR="" tem que ser definido ou nada será enviado para o arquivo-->
+					<input id="masc" type="radio" name="genero" value="masc"> <label for="masc">Masculino</label><br>
+					<input id="fem" type="radio" name="genero" value="fem"> <label for="fem">Feminino</label>
+				</fieldset><br/><!--Não é possível alterar o tamanho do fieldset apenas com a linguagem html-->
+
+				<fieldset><!--a tag <fieldset> os demais campos com um retângulo-->
+					<legend>Atividades:</legend><!--Indica o nome do que está dentro do fieldset-->
+					<!--No tipo CHECKBOX várias opções podem ser marcadas ao mesmo tempo. De forma análoga ao tipo radio um valor deve ser atribuido a cada opção.-->
+					<input id="musc" type="checkbox" name="atividade" value="musculacao"><label class="label-atividades" for="musc">Musculação</label><br>
+					<input id="pila" type="checkbox" name="atividade" value="pilates"><label class="label-atividades" for="pila">Pilates</label><br>
+					<input id="ioga" type="checkbox" name="atividade" value="ioga"><label class="label-atividades" for="ioga">Ioga</label><br>
+					<input id="corr" type="checkbox" name="atividade" value="corrida"><label class="label-atividades" for="corr">Corrida</label><br>
+				</fieldset><br/>
+
+				<label for="msg">Mensagem:</label>
+						<!--A tag <textarea> é uma caixa de texto, deve ovbrigatóriamente ser fechada. O atributo COLS="" se refere ao número de caracteres que podem ser digitados funciona como larhura da caixa de texto. O atributo ROWS="" se refere ao número de linhas, funciona como altura da caixa de texto.-->
+				<textarea id="msg" cols="40" rows="6"></textarea>
+
+
+				<!--Tipos de botões input: SUBMIT: nesse caso submetem-se (enviam-se) todas as informações do formulario e o tipo RESET: todas as informações no formulario são apagadas.A insccrição btn no atributo NAME="" diz respeito ao fato de ser um botão. O atributo VALUE="" modifica a inscrição que aparece no botão-->
+				<div id="botoes-form">
+					<input type="submit" name="btn-agendar" value="AGENDAR"/>
+					<input type="reset" name="btn-cancelar" value="CANCELAR"/> 
+				</div>	
+			</form>
+		</section>
+		<footer>
+	       	<p> Desenvolvido por <a href="http://instagram.com/tiagosegato" target="_blank"> Tiago Segato </a>  - 2023</p>
+	    </footer>
+	</body>
+</html>
