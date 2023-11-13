@@ -1,0 +1,366 @@
+/* Formato geral do comando css: seletor{propriedade:valor;}*/
+
+/* 
+Usando a segmentação do site com as tags do tipo div. Os mecanismos de busca farão a valoração do termo buscado levando 
+em consideração em qual divisão o termo foi encontrado. 
+
+Tags estilo div: header: cabeçalho, pode ser usado no banner inicialdo site,
+                 article: juntamente com o main é a parte mais importante do site, mas é reservado para texto;
+                 main: parte mais importante do site reservado para landing page; 
+                 footer: rodapé; 
+                 nav: navegação, muito utilizado nos menus; 
+                 section: seções comuns do site, reservada para as demais seções da página sem muito valor semântico; 
+                 aside: uma seção do site que tem um conteúdo não relacionado ao site, normalmente utilizada para parceiros
+                 do site;
+                 (https://www.w3schools.com/html/html5_semantic_elements.asp)
+*/
+
+/* Código para utilização de fonts online, nesse caso específico usamos o google fonts para gerar o arquivo abaixo. Escolhe-
+mos as fonts necessárias e geramos o arquivo pelo @import do site. */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* Comando remove todas as margens do documento, o asterisco é um seletor universal.*/
+ *{
+ 	margin:0; 
+ 	padding:0;
+ }
+
+/* O ideal é fazer a formatação na mesma ordem que os itens aparecem no documento HTML, isso ajudará a encontrar os comandos
+posteriormente*/
+ 
+/* A inserção de cor no background pode se feita por meio do valor hexadecimal já abordado e também pelo seguinte código 
+rgb(#,#,#) onde cada # deve ser substituido por um número (varia de 0 a 255) equivalente a magnetude de vermelho, verde e azul.*/ 
+body{
+	background-color: rgb(255,255,255);                      
+}
+
+/*Aqui foram agrupados os dois seletores: IMG e HEADER, ambos terão as mesmas propriedades*/
+header, img{
+ 	width: 100%;
+ 	height:380 px;
+}
+/* IMG: Esse comando ajusta a figura para caber na largura da tela e fixa a altura em 380 pixels, para sites responsivos o comando
+será outro, mas será abordado posteriormente.*/
+/* Unidades de medida no CSS: 
+% o objeto vai ocupar a porcentagem do espaço na página, 
+px se refere ao número de pixels, após todo valor deve ser indicada a unidade de medida
+rem serefere ao tamanho da fonte, 1 rem tamanho normal, 2 rem a font dobra o tamanho*/
+
+nav{
+	background-color: #0191A4; 
+	text-align: center;
+	padding: 10px;
+}
+
+
+a{
+	font: 1.2rem 'Roboto', sans-serif;
+	text-decoration: none; /*Retira o sublinhado dos links.*/
+}
+/* Os links possuem 4 estados e todos eles podem / devem ser configurados, a configuração pode ser agrupada.
+a:link = antes do link ser utilizado,
+a:visited = depois que o link foi utilizado,
+a:active = no momento em que o usuário clica no link,
+a:hover = quando o usuário está com o cursor sobre o link,
+ */
+
+.a-menu{
+	margin-right: 40px; /* Dá um espaçamento a direita em todos os links */
+	font-weight: bold;
+}
+
+
+.a-menu:link, a:visited{
+	color: #FFF;
+}
+
+.a-menu:hover, a:active{
+	color: #3F51B5;
+}
+
+article{
+	width: 100%;
+	background-color: #FFF;
+	padding: 20px;
+	box-sizing: border-box; /* Faz com que  o tamanho do padding seja considerado como conteúdo.*/
+}
+
+/*Os comandos FONT-FAMILY e FONT-SIZE e demais iniciados por FONT podem ser algutinados em um mesmo comando da forma:
+FONT: 3REM 'KAUSHAN SCRIPT', CURSIVE . Note que a separação entre os argumentos dos dois comandos se dá por espaços e não por 
+vírgulas. */
+
+h1{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 3rem;
+	color: #3F51B5;
+	text-align: center;
+	margin-bottom: 50px;
+}
+/*Os comando MARGIN, BORDER, PADDING pode serm usados para declarar os 4 valores deuma vez só. Ex: (margin: 5px 10px 20 px 30 px;) o primeiro
+valor sempre é o do topo, depois segue o sentido horário com a margem esquerda, depois a inferior e por fim a direita. Se  o
+comando for declarado com apenas dois valores como em: (margin: 5px 30 px;) o valor de 5px representa as margens superior e 
+inferior e o valor de 30px as margens esquerda e direita.*/
+
+
+/*O comando font-family (font-family: Avenir, Arial, sans-serif;)permite a seleção de uma familia de fontes para o site, a ordem de prioridade é seguida, nesse exemplo
+a primeira fonte a ser aplicada é a Avenir, se não for possível será aplicada a Arial, se também apresentar problemas será apli
+cada uma fonte sem serifa (SANS-SERIF). Com comando SERIF a plicação será de uma fonte com serifa, já comando CURSIVE aplica
+um formato de letra aproximado da escrita cursiva.
+
+A opção TEXT-ALIGN aceita as opções: left, right, justify e center 
+
+
+Nesse exemplo optamos pela utilização de uma fonte online, utilizamos o site google fontes e geramos o arquivo que está no 
+início docódigo CSS por meio do @import. Nesse caso será utilizado o agrumamento dos comandos FONT*/
+p{
+	font: 1.2rem 'Roboto', sans-serif; /*As aspas são obrigatórias se o nome da font for composto como em: times new roman*/
+	color: #777;
+	text-align: justify;
+	font-weight: 400;
+	/*text-indent: 20px;  Dá o espaço referente ao parágrafo (retirado pelo professor)*/
+	line-height: 28px; /* Dá o espaçamento entre as linhas*/
+}
+
+#txt-preto{
+	color: #000;
+	font-weight: bold;
+}
+
+h2{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 2.3rem;
+	color: #3F51B5;
+	margin-bottom: 20px;
+}
+
+
+
+/*Neste seletor foi usado o conceito de identificador único. Usando o seletor: #pag-beneficios apenas o objeto identificado
+pelo seletor (nesse caso a sessão) sofrerá as mudanças codificadas entre as chaves. o símbolo: "#" indica o uso de um seletor de identificador
+único (ID).*/
+#pag-beneficios{
+	background-color: #0191A4;
+	padding: 20px;
+}
+
+#pag-beneficios h2{    /*Esse código altera apenas o h2 dentro da tag identificada como pag-beneficios*/
+	color: #FFF;
+}
+
+#pag-beneficios p{ /*Esse código altera apenas o p dentro da tag identificada como pag-beneficios*/
+	color: #FFF;
+	margin-top: 20px;
+}
+
+/*Formatação lista. */
+ul{ 
+	list-style-position: inside; /*Essa caracteristica faz os símbolos de enumeração ficarem dentro ou fora do objeto lista*/
+	list-style-type: circle; /* Tipo de marcador de enumeração, lista completa pode ser encontrada no w3schools, com o coman-
+							 do list-style-image: pode ser inserida uma imagem no lugar do marcador. */
+	padding: 20px 50px;
+}
+
+li{ /*Formatação itens da lista. */
+	font: 1.2rem 'Roboto', sans-serif;
+	color: #FFF;
+	margin-bottom: 10px; /*Espaçamento dos itens da lista*/
+}
+
+#pag-modalidades{
+	background-color: #EEE;
+	padding: 20px;
+}
+
+#container{
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/*Para formatar vários objetos de uma vez só podemos marcá-los no arquivo HTML como CLASS e então codificamos as carac-
+teristicas da CLASS aqui no arquivo CSS. Abaixo sção formatadas todas as figuras da sessão modalidades. O uso do símbolo "." 
+indica o uso do seletor de uma classe (CLASS).*/
+.card{
+	background-color: #FFF;
+	margin: 10px;
+	width: 25%;
+	border-radius: 8px; /*bordas arredondadas, funciona como os valores de padding, podem ser inseridos 4 valores diferentes*/
+	box-shadow: 0px 4px 8px #CCC; 
+	transition: 0.5s; /*faz a transição do estado do card para  o hover*/
+	padding: 4px;
+}
+/*BOX-SHADOW: Os dois primeiros valores são referentes a posição da sombra, valores positivos mostram sombra a direita e no 
+fundo valores negativos negativos na esquerda e no topo, como se a fonte de luz mudasse de posição. O terceiro valor diz 
+respeito ao gradiente da sobra, como ela vai sumindo. O ultimo valor é referente coloração da sombra*/
+
+.card:hover{
+	box-shadow: 0 8px 16pc #CCC;
+}
+
+.card-content{
+	padding: 10px;
+}
+
+.card-content p{
+	font: 1rem 'Roboto', sans-serif; /*As aspas são obrigatórias se o nome da font for composto como em: times new roman*/
+	font-weight: 400;
+	line-height: 20px; /* Dá o espaçamento entre as linhas*/
+}
+
+h3{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 1.5rem;
+	color: #3F51B5;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#pag-treinos{
+	padding: 20px;
+}
+
+#pag-treinos p{
+	text-align: justify;
+	margin-bottom: 10px;
+}
+
+#container-treinos{
+	display: flex;
+}
+
+.coluna-treinos{
+	padding: 20px;
+}
+
+.container-imagens{
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-imagens p{
+	color: #000;
+}
+
+.img-icones{
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+}
+
+video{
+	width: 600px;
+}
+
+footer{
+	background-color: #000;
+	padding: 10px;
+}
+
+footer p{
+	text-align: center;
+	color: #FFF;
+}
+
+footer a{
+	color: #FFF;
+}
+
+footer a:hover{
+	color: #00BCD4;
+}
+
+/*Página Agendamentos: */
+
+#pag-agendamentos{
+	padding: 20px;
+}
+
+#pag-agendamentos p{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+form{
+	width: 400px;
+	margin: 0 auto;
+}
+
+input, select, textarea{
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+	padding-left: 5px; /*texto a ser digitado nas caixas de texto estava muito colado na propria caixa*/
+	box-sizing: border-box; /* Faz com que  o tamanho do padding seja considerado como conteúdo.*/
+	border: 1px solid #C4C4C4; /*1valor: espessura, 2valor: estilo, 3valor:cor */
+	font: 1rem 'Roboto', sans-serif; /*formatação texto dentro da caixas*/
+	color: #333;
+	background-color: #FFF;
+}
+
+label, fieldset{
+	font: 1.2rem 'Roboto', sans-serif;
+}
+
+.agendamento-data, .agendamento-hora, .agendamento-numero{
+	padding-right: 10px ;
+}
+
+fieldset{
+	border: 1px solid #CCC;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+#data-hora-numero{
+	display: flex;
+}
+
+input[type="radio"], input[type="checkbox"]{
+	width: 15px;
+	height: 15px;
+	margin-left: 50px;
+}
+
+textarea{
+	height: 80px;
+}
+
+#botoes-form{
+	display: flex;
+}
+
+input[type="submit"], input[type="reset"]{
+	margin: 20px;
+	background-color: #8BC34A;
+	color: #FFF;
+	border: 0;
+	border-radius: 5px;
+}
+
+.label-atividades{
+	padding-left: 5px;
+}
+
+input[type="reset"]{
+	background-color: #F47E7E;
+}
+
+/*Entendendo o Box Model: https://www.w3schools.com/css/css_boxmodel.asp e 
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model
+
+content = conteúdo, onde o texto e as imagens aparecem 
+padding = dá um espaço entre a borda e o conteúdo
+border  = borda, circunscreve o padding e o conteúdo tem várias propriedade, as principais são color, style (tipo), width 
+(espessura) devem ser colocadas juntas.
+margin = dá um espaço entre a borda e  a área fora da borda, por padrão  é transparente
+
+Exemplo de comando para marcar uma div:
+
+width:300px;
+height:300px;
+background-color:#CCC;
+padding:20px;
+border: 1px solid red  (largura, estilo e cor ) 
+*/
