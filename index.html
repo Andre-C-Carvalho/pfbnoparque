@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!--Tag especifica que o conteúdo do site é em português do Brasil-->
+	<head>
+		<title>PFB no Parque</title> <!--Tag especifica caracteres que aparecem na aba do navegador-->
+		<meta charset="utf-8" /> <!--Tag permite o uso de caracteres especiais como acentos, cedilha, etc-->
+		<meta name="author" content="André Carvalho"/><!--Não deve ser quem desenvolveu, é um complemento a descrição e as palavras chaves, usar o nome pra quem o site foi desenvolvido-->
+		<meta name="keywords" content="Progressive,FitBall,pfb,parque da cidade,atividade física,pilates,parque,atividade física,progressivefitball"/><!--Podem ser usados até 150 caracteres-->
+		<meta name="description" content="Prática de atividade ao ar livre utilizando a fitball, pode ser utilizado na reabilitação"/><!--Podem ser usados até 90 caracteres-->
+		<link rel="stylesheet" type="text/css" href="estilo.css"/><!--link que associa o arquivo CSS a esse-->
+	</head>
+	<body>
+		<header>
+			<img src="img/banner.png" alt="banner do site contendo foto da imagem do parque da cidade com bastante verde e céu azul em um dia ensolarado contendo a logo do PFB no parque ao fundo"/>
+			<!--Tag <img> o atributo scr é obrigatório nessa tag--><!--100% no atributo width ou height fixa a imagem na totalidade da tela, o ideal é escolher um dos atributos para evitar distorção--> <!--O atributo alt serve como alternativa ao carregamento da imagem, é utilizado no caso da imagem não carregar ou para fins de acessibilidade (baixa visão)-->
+		</header>
+		<nav>
+			<a class="a-menu" href="#">HOME</a> 
+			<a class="a-menu" href="#pag-beneficios">BENEFÍCIOS</a> 
+			<a class="a-menu" href="#pag-modalidades">MODALIDAES</a> 
+			<a class="a-menu" href="#pag-treinos">TREINOS</a> 
+			<a class="a-menu" href="agendamento.html">AGENDAMENTOS</a>
+		</nav>
+		
+		<!--tag <a> indica algo clicável, um link (ainda não foi navegado), alink(no momento do click), vlink(após o link ser utilizado)--><!--o atributo href indica para onde o link vai mandar o usuário: para lugar algum(#), para outro site(http:), para outo lugar na mesma pagina (uma tag), ou para outra pagina do proprio site (outro arquivo, diferente do index) modificadas na tag <body>-->
+		<article>
+			<h1>PFB no Parque</h1>
+			
+			<p>O ProgressiveFitBall (PFB) é um método de exercício físico que pode ser utilizado na reabilitação e no treinamento físico, ou até mesmo, como forma de expressão através do movimento e diversão.</p>
+
+			<p>Desenvolvido pelo Fisioterapeuta Rafael Rabelo explora a FITBALL como um equipamento que oferece infinitas possibilidades de movimentos, buscando desenvolver as capacidades físicas do 	praticante: força, resistência, equilíbrio, flexibilidade, agilidade, coordenação motora e velocidade.</p>
+
+		    <p>A prática do PFB no parque reúne todos os benefícios do método aliados ao prazer e bem estar da <em>prática de atividades</em> físicas ao ar livre!</p>
+		</article>    
+
+		<section id="pag-beneficios">	       	
+		    <h2>Benefícios</h2>
+		        
+		    <p>A prática do ProgressiveFitBall ao ar livre pode proporcionar:</p>
+
+		    <!--Criação de uma lista-->	
+		    <!--tag <ul> lista não ordenada(unordered list) tópicos: disk(padrão),square, circle, none)--> <!--tag <ol> lista ordenada(1,a,A,i,I)--> <!--tag <li> indica um item da lista (list item)-->
+		    <!-- Para lista ordenada o type pode ser: 1(padrão), a, A, i, ou I-->
+	        <ul>
+			    <li>Atividade física de forma lúdica</li>
+				<li>Melhora da qualidade física</li>
+				<li>Atendimento personalizado</li>
+				<li>Treinos em qualquer lugar</li>
+				<li>Contato com a natureza</li>
+			</ul>
+		</section>
+
+		<section id="pag-modalidades">	
+	        <h2>Modalidades</h2>
+	        
+	        <p>O método conta com as modalidades Básico, Intermediário e Avançado, além do AcroPFB, Freestyle e Calistenia.</p>
+
+	        <div id="container">	
+		        <div class="card">
+		        	<img src="img/basico.png" alt="Instrutora auxiliando aluna a subir na fitball"/>	
+		        	<div class="card-content">
+		        		<h3>Básico</h3>
+		        		<p>Básico: O Aluno conhece o método e a FitBall, desenvolve diversos exercícios que evoluem conforme seu desempenho. Esta categoria se completa com os níveis Intermediário e Avançado.</p>
+		        	</div>
+		        </div>
+		        
+		        <div class="card">
+		        	<img src="img/freestyle.png" alt="Aluno praticando movimento do freestyle utilizando duas fitballs"/>
+		        	<div class="card-content">
+		        		<h3>Freestyle</h3>
+		        		<p> Freestyle: Após criar intimidade e ter domínio da FitBall o aluno pode combinar os exercícios do Básico e fazer transições entre estes criando novas possibilidades ao seu próprio  estilo.</p>
+		        	</div>	
+		        </div>
+
+		        <div class="card">
+		        	<img src="img/calistenia.png" alt="Exercício em dupla de calistenia"/>
+		        	<div class="card-content">
+		        		<h3>Calistenia</h3>
+		        		<p>Calistenia: Aborda um conjunto de exercícios que utilizam o peso do próprio corpo. Demandam de força, equilíbrio, etc. e podem ser complementados com a FitBall.</p>
+		        	</div>
+		        </div>
+
+		        <div class="card">
+		        	<img src="img/acro.png" alt="Posição acrobática com três pessoas fazendo pranchas"/>
+		        	<div class="card-content">
+		        		<h3>AcroPFB</h3>
+						<p>AcroPFB: Combina as características das outras modalidades como posturas na FitBall do Básico, Calistenia e até mesmo acrobacias gerais como da Yoga. Uma ótima maneira de se desafiar com outros participantes.</p>
+		        	</div>
+		        </div>
+		    </div>    
+	    </section>
+
+		<section id="pag-treinos">	
+	    	<h2>Treinos</h2>
+
+	    	<div id="container-treinos">
+		       <div class="coluna-treinos">
+				    <p>
+				    	Normalmente os treinos acontecem aos finais de semana no período da manhã  no Parque da Cidade, Brasília - DF. 
+				    </p>
+					<p>
+						Todo aluno é acompanhado pela instrutora Alessandra Ferro que após apresentar o exercício, fala dos seus benefícios e explica a importância do movimento, faz uma breve demonstração e acompanha o aluno. 
+					</p>
+
+					<p>
+						Tal acompanhamento é importante para a própria segurança do aluno e possíveis ajustes.
+					</p>
+				    
+					<div class="container-imagens">
+			       		<a href="http://instagram.com" target="_blank">
+			       			<img class="img-icones" src="img/logoinsta.png"/> 
+			       		</a>
+			       		<a href="http://instagram.com" target="_blank">
+			       			<p>@le.ferro</p>
+			       		</a>
+			       	
+			       		<a href="mailto:le.ferro@gmail.com" target="_blank">
+			       			<img class="img-icones" src="img/logoemail.png"/> 
+			       		</a>
+			       		<a href="mailto:le.ferro@gmail.com" target="_blank">
+			       			<p>le.ferro@gmail.com</p>
+			       		</a>
+		       		</div>
+	       		</div>
+
+	       		<div class="coluna-treinos">
+		       		<!--Atributos da tag <vídeo> CONTROLS: incorpora os controles a janela de vídeo, AUTOPLAY: o vídeo inicia assim que a página é aberte, LOOP: quando o vídeo termina uma nova execução do vídeo inicia automaticamente, MUTED: o vídeo inicia por padrão em modo mudo, PRELOAD: assim que a pagina é aberta ovídeo começa a ser carregado-->
+		   			<video src="img/video_teste.mp4" controls autoplay loop muted preload="auto">
+		       			Seu navegador não suporta vídeo!
+	       		</video>
+	       		</div>
+       		</div>
+
+		</section>
+
+		<footer>
+		    <p> Desenvolvido por <a href="http://instagram.com" target="_blank">Tiago Segato</a> - 2023</p>
+		    <!--O elemento clicável é colocado dentro da tag <a></a> o atributo href="" contem o link para direcionamento, O atributo target="_blank" faz com que o link seja aberto em uma nova janela. Existem 4 tipos de links: 1. # Leva para o início da página como no link HOME, 2. Endereço externo (mostrado acima), 3. Para outro lugar na mesma página (link interno no mesmo documento) primeiro identificamos um local da págin com oatributo id="" depois colocamos o identificador no atributo href="" do elemento clicável, 4. Para outro arquivo do mesmo site: nesse cado basta atribuir ao href="" do elemento clicável o nome do outro arquivo sem o caractere # como no link AGENDAMENTOS-->
+		</footer>
+	</body>
+</html>
